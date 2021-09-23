@@ -6,7 +6,7 @@ namespace FileReader.ConsoleUI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            new Runner().Run();
         }
     }
 }
