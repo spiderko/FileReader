@@ -112,7 +112,5 @@ namespace FileReader.Application.Services
 
             return startingRow + 1;
         }
-
-
     }
 }

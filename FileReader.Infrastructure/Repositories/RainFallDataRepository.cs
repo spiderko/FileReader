@@ -1,17 +1,15 @@
-﻿using FileReader.Core.Models;
-using System.Collections.Generic;
+﻿using FileReader.Application.Common;
 using System.Data;
 using System.Data.SqlClient;
 
 namespace FileReader.Infrastructure.Repositories
 {
-    public class RainFallDataRepository
+    public class RainFallDataRepository : IRainFallDataRepository
     {
-        public void Insert(IEnumerable<RainFallData> data)
+        public void Insert(DataTable dataTable)
         {
             var connection = new SqlConnection("Server=localDb;Database=RainFallData;Trusted_Connection=True;");
             var tableName = "RainFall";
-            var dataTable = new DataTable();
 
             BulkCopy(connection, tableName, dataTable);
         }

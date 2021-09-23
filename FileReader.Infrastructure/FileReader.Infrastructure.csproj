@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FileReader.Application\FileReader.Application.csproj" />
     <ProjectReference Include="..\FileReader.Core\FileReader.Core.csproj" />
   </ItemGroup>
 

@@ -1,12 +1,30 @@
-﻿using System;
+﻿using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using FileReader.Application.Services;
 
 namespace FileReader.ConsoleUI
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            new Runner().Run();
+            using IHost host = CreateHostBuilder(args).Build();
+
+            host.Services.GetRequiredService<Runner>().Run();
+        }
+
+        private static IHostBuilder CreateHostBuilder(string[] args)
+        {
+            return Host.CreateDefaultBuilder(args)
+                .ConfigureServices(services => 
+                {
+                    services.AddTransient<Runner>();
+                    services.AddScoped<IDataExtractionService, DataExtractionService>();
+                    services.AddTransient<IDataTableService, DataTableService>();
+                    services.AddTransient<IFileReadService, FileReadService>();
+                    services.AddTransient<IRainFallService, RainFallService>();
+
+                });
         }
     }
 }
