@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileReader.Application", "FileReader.Application\FileReader.Application.csproj", "{E3551DB9-0ACF-4524-BF1D-F006D9B62BA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileReader.ConsoleUI", "FileReader.ConsoleUI\FileReader.ConsoleUI.csproj", "{4BA47908-6261-443B-B060-AD9EED225742}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3551DB9-0ACF-4524-BF1D-F006D9B62BA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3551DB9-0ACF-4524-BF1D-F006D9B62BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3551DB9-0ACF-4524-BF1D-F006D9B62BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3551DB9-0ACF-4524-BF1D-F006D9B62BA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA47908-6261-443B-B060-AD9EED225742}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA47908-6261-443B-B060-AD9EED225742}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA47908-6261-443B-B060-AD9EED225742}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA47908-6261-443B-B060-AD9EED225742}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60B2AA49-C58E-42C5-AEB5-2A5917E5A248}
+	EndGlobalSection
+EndGlobal
