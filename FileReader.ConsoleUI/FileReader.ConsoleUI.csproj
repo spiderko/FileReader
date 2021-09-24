@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="@echo off&#xD;&#xA;&#xD;&#xA;echo Building local DB&#xD;&#xA;call &quot;$(SolutionDir)FileReader.RoundhousE\RoundHousE\LOCAL.DBDeployment.Update.bat&quot;&#xD;&#xA;" />
+    <Exec Command="@echo off&#xD;&#xA;&#xD;&#xA;echo Building local DB&#xD;&#xA;call &quot;$(SolutionDir)FileReader.RoundhousE\RoundHousE\LOCAL.DBDeployment.DropCreate.bat&quot;&#xD;&#xA;" />
   </Target>
 
 </Project>
