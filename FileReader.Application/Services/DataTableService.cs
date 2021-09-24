@@ -11,9 +11,31 @@ namespace FileReader.Application.Services
         {
             DataTable dataTable = new DataTable(typeof(T).Name);
 
+            var intProp = new List<string>() { "Xref", "Yref", "Day", "Month", "Year", "Value" };
+            var dateProp = new List<string>() { "Date", "Created" };
+            var guidProp = new List<string>() { "Id" };
+
             PropertyInfo[] Props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
             foreach (PropertyInfo prop in Props)
             {
+                if(dateProp.Contains(prop.Name))
+                {
+                    dataTable.Columns.Add(prop.Name, typeof(DateTime));
+                    continue;
+                }
+
+                if (intProp.Contains(prop.Name))
+                {
+                    dataTable.Columns.Add(prop.Name, typeof(int));
+                    continue;
+                }
+
+                if (guidProp.Contains(prop.Name))
+                {
+                    dataTable.Columns.Add(prop.Name, typeof(Guid));
+                    continue;
+                }
+
                 dataTable.Columns.Add(prop.Name);
             }
 
