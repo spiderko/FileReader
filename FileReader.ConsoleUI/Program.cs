@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using FileReader.Application.Services;
+using FileReader.Infrastructure.Repositories;
+using FileReader.Application.Common;
 
 namespace FileReader.ConsoleUI
 {
@@ -23,7 +25,7 @@ namespace FileReader.ConsoleUI
                     services.AddTransient<IDataTableService, DataTableService>();
                     services.AddTransient<IFileReadService, FileReadService>();
                     services.AddTransient<IRainFallService, RainFallService>();
-
+                    services.AddTransient<IRainFallDataRepository, RainFallDataRepository>();
                 });
         }
     }

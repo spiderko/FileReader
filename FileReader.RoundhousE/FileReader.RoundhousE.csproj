@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="db\00010.CreateTable.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>00010.CreateTable.sql</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="db\00010.CreateTable.sql">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>00010.CreateTable.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

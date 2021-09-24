@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FileReader.Application\FileReader.Application.csproj" />
+    <ProjectReference Include="..\FileReader.Infrastructure\FileReader.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

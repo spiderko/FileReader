@@ -39,6 +39,9 @@ namespace FileReader.Application.Services
                                 grid.Item1, 
                                 grid.Item2, 
                                 new DateTime(newYear, month, 1), 
+                                1,
+                                month,
+                                newYear,
                                 int.Parse(column)
                                 )
                             );

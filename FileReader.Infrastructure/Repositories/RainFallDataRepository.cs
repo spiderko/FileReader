@@ -8,7 +8,7 @@ namespace FileReader.Infrastructure.Repositories
     {
         public void Insert(DataTable dataTable)
         {
-            var connection = new SqlConnection("Server=localDb;Database=RainFallData;Trusted_Connection=True;");
+            var connection = new SqlConnection("Server=localhost;Database=RainFallData;Trusted_Connection=True;");
             var tableName = "RainFall";
 
             BulkCopy(connection, tableName, dataTable);
@@ -18,11 +18,13 @@ namespace FileReader.Infrastructure.Repositories
         {
             using (var bulkCopy = new SqlBulkCopy(sqlConnection))
             {
+                sqlConnection.Open();
                 bulkCopy.DestinationTableName = tableName;
                 bulkCopy.BatchSize = 50000;
                 bulkCopy.BulkCopyTimeout = 60;
 
                 bulkCopy.WriteToServer(dataTable);
+                sqlConnection.Close();
             }
         }
     }
