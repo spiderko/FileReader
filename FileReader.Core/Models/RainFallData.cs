@@ -5,6 +5,7 @@ namespace FileReader.Core.Models
     public class RainFallData : BaseClass
     {
         public RainFallData(
+            Guid headerId,
             int xref, 
             int yref, 
             DateTime date, 
@@ -13,6 +14,7 @@ namespace FileReader.Core.Models
             int year,
             int value)
         {
+            HeaderId = headerId;
             Xref = xref;
             Yref = yref;
             Date = date;
@@ -23,7 +25,7 @@ namespace FileReader.Core.Models
             Created = DateTime.UtcNow;
             Id = Guid.NewGuid();
         }
-
+        public Guid? HeaderId { get; set; }
         public int Xref { get; set; }
         public int Yref { get; set; }
         public DateTime Date { get; set; }

@@ -6,14 +6,17 @@ namespace FileReader.Application.Services
 {
     public class RainFallService : IRainFallService
     {
-        private readonly IRainFallDataRepository repository;
+        private readonly IRainFallDataRepository bodyRepository;
+        private readonly IRainFallHeaderRepository headerRepository;
         private readonly IDataTableService dataTableService;
 
         public RainFallService(
-            IRainFallDataRepository repository, 
+            IRainFallDataRepository bodyRepository, 
+            IRainFallHeaderRepository headerRepository,
             IDataTableService dataTableService)
         {
-            this.repository = repository;
+            this.bodyRepository = bodyRepository;
+            this.headerRepository = headerRepository;
             this.dataTableService = dataTableService;
         }
 
@@ -21,7 +24,12 @@ namespace FileReader.Application.Services
         {
             var dataTable = dataTableService.ConvertListToDataTable(data);
 
-            repository.Insert(dataTable);
+            bodyRepository.Insert(dataTable);
+        }
+
+        public void SaveHeader(RainFallHeader data)
+        {
+            headerRepository.Insert(data);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace FileReader.Application.Services
 
             var intProp = new List<string>() { "Xref", "Yref", "Day", "Month", "Year", "Value" };
             var dateProp = new List<string>() { "Date", "Created" };
-            var guidProp = new List<string>() { "Id" };
+            var guidProp = new List<string>() { "Id", "HeaderId" };
 
             PropertyInfo[] Props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
             foreach (PropertyInfo prop in Props)
@@ -51,14 +51,15 @@ namespace FileReader.Application.Services
             }
 
             dataTable.Columns["Id"].SetOrdinal(0);
-            dataTable.Columns["Xref"].SetOrdinal(1);
-            dataTable.Columns["Yref"].SetOrdinal(2);
-            dataTable.Columns["Date"].SetOrdinal(3);
-            dataTable.Columns["Day"].SetOrdinal(4);
-            dataTable.Columns["Month"].SetOrdinal(5);
-            dataTable.Columns["Year"].SetOrdinal(6);
-            dataTable.Columns["Value"].SetOrdinal(7);
-            dataTable.Columns["Created"].SetOrdinal(8);
+            dataTable.Columns["HeaderId"].SetOrdinal(1);
+            dataTable.Columns["Xref"].SetOrdinal(2);
+            dataTable.Columns["Yref"].SetOrdinal(3);
+            dataTable.Columns["Date"].SetOrdinal(4);
+            dataTable.Columns["Day"].SetOrdinal(5);
+            dataTable.Columns["Month"].SetOrdinal(6);
+            dataTable.Columns["Year"].SetOrdinal(7);
+            dataTable.Columns["Value"].SetOrdinal(8);
+            dataTable.Columns["Created"].SetOrdinal(9);
 
             return dataTable;
         }

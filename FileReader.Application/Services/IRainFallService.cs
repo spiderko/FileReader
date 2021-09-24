@@ -6,5 +6,6 @@ namespace FileReader.Application.Services
     public interface IRainFallService
     {
         void SaveData(List<RainFallData> data);
+        void SaveHeader(RainFallHeader data);
     }
 }

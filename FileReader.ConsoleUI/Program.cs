@@ -26,6 +26,7 @@ namespace FileReader.ConsoleUI
                     services.AddTransient<IFileReadService, FileReadService>();
                     services.AddTransient<IRainFallService, RainFallService>();
                     services.AddTransient<IRainFallDataRepository, RainFallDataRepository>();
+                    services.AddTransient<IRainFallHeaderRepository, RainFallHeaderRepository>();
                 });
         }
     }
