@@ -16,4 +16,8 @@
     <ProjectReference Include="..\FileReader.Infrastructure\FileReader.Infrastructure.csproj" />
   </ItemGroup>
 
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="@echo off&#xD;&#xA;&#xD;&#xA;echo Building local DB&#xD;&#xA;call &quot;$(SolutionDir)FileReader.RoundhousE\RoundHousE\LOCAL.DBDeployment.Update.bat&quot;&#xD;&#xA;" />
+  </Target>
+
 </Project>
